@@ -1,0 +1,48 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+
+.indexWrap{
+ 	display:block; 
+	height:210px;
+	margin-bottom:10px;
+	overflow:hidden;
+}
+.front, .back{
+	width:500px;
+	height:200px;
+	border: 5px solid black;
+	margin-bottom:5px;
+}
+.cardText{
+	position: relative;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	text-align: center;
+	font-size:35px;
+	transform: translate(-50%, -50%);	
+}
+textarea{
+	resize:none;
+	width:250px;
+}
+button{
+	margin-left:23%;
+}
+
+.active{
+	
+}
+.hidden{
+	display:none;
+}
+.flipButton{
+	height:20px;
+	width: 20px;	
+	margin:0;
+	padding:0;
+	position:absolute;
+}
