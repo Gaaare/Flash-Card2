@@ -41,4 +41,34 @@ $(document).ready(function(){
 		$(".oldActive").addClass("hidden");
 		$(".oldActive").removeClass("oldActive");
 	})
+	
+	
+	function IndexCard(number, frontText, backText){
+		this.cNumber = number;
+		this.cFrontText = frontText;
+		this.cBackText = backText;
+	}
+	/* 
+	card1 = new IndexCard(1,"test","test 2"); */
+/* 	card = "hello";
+	 */
+	 
+	savedCards = [];
+	
+	$("#save").click(function(){
+		var front = $(".front .cardText p").text();
+		var back = $(".back .cardText p").text();
+		var num = savedCards.length;
+		
+		savedCards[num] = new IndexCard(num,front,back);
+		
+	})
+	
+	
+	$(".flipper")
+	$(".front")
+	$(".back")
+	 
+	
+	
 })

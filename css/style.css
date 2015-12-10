@@ -30,9 +30,11 @@ textarea{
 	width:250px;
 }
 button{
-	margin-left:23%;
+	margin-left:18%;
 }
-
+#save{
+		margin-left:1%;
+}
 .active{
 	
 }
