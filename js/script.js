@@ -27,8 +27,8 @@ $(document).ready(function(){
 		console.log(frontText);
 		console.log(backText);
 		
-		$(".front .cardText p").text(frontText);
-		$(".back .cardText p").text(backText);
+		$(".createF .cardText p").text(frontText);
+		$(".createB .cardText p").text(backText);
 	})
 	$(".flipButton").click(function(){
 	
@@ -43,8 +43,7 @@ $(document).ready(function(){
 	})
 	
 	
-	function IndexCard(number, frontText, backText){
-		this.cNumber = number;
+	function IndexCard(frontText, backText){
 		this.cFrontText = frontText;
 		this.cBackText = backText;
 	}
@@ -56,13 +55,27 @@ $(document).ready(function(){
 	savedCards = [];
 	
 	$("#save").click(function(){
-		var front = $(".front .cardText p").text();
-		var back = $(".back .cardText p").text();
+		var front = $(".createF .cardText p").text();
+		var back = $(".createB .cardText p").text();
 		var num = savedCards.length;
 		
-		savedCards[num] = new IndexCard(num,front,back);
-		
+		savedCards[num] = new IndexCard(front,back);
+		$(".savedCards").append('<div class="indexWrap"><div class="front active">\
+			<img src="img/arrow.png" class="flipButton"></img>\
+			<div class="cardText">\
+				<p>'+front+'</p>\
+			</div>\
+		</div>\
+		<div class="back hidden">\
+			<img src="img/arrow.png" class="flipButton"></img>\
+			<div class="cardText">\
+				<p>'+back+'</p>\
+			</div>\
+		</div>\
+	</div>\
+	</div>');
 	})
+	
 	
 	
 	$(".flipper")
