@@ -30,11 +30,13 @@ textarea{
 	width:250px;
 }
 button{
-	margin-left:18%;
+	display:block;
+	position:relative;
+	width: 100px;
+	margin: 0 auto;
+	margin-bottom:10px;
 }
-#save{
-		margin-left:1%;
-}
+
 .active{
 	
 }
@@ -47,6 +49,9 @@ button{
 	margin:0;
 	padding:0;
 	position:absolute;
+	margin-left:470px;
+	margin-top:170px;
+	
 }
 
 .savedCards{
@@ -54,3 +59,8 @@ button{
 	padding: 0;
 }
 /*fudge*/
+.mainWrap{
+	margin: 0 auto;
+	width: 525px; 
+	
+}
