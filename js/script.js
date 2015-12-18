@@ -67,7 +67,7 @@ $(document).ready(function(){
 			saveEdit();
 			isEditing=false;
 			$("#save").html("Save New Card");
-			$(".mainWrap").css("background-color","#6699ff");
+			$(".mainWrap").css("background-color","#8AB1D9");
 		}else{
 			//saves new card if editing is false
 			saveNew();
@@ -109,7 +109,7 @@ $(document).ready(function(){
 		isEditing=true;
 		
 		//changes background color to indicate editing
-		$(".mainWrap").css("background-color","#4dff4d");
+		$(".mainWrap").css("background-color","#ffb84d");
 		//changes save button text to indicate editing
 		$("#save").html("Save Edit");
 /* 		console.log("front ="+frontText);
