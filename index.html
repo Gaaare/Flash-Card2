@@ -8,30 +8,36 @@
 </head>
 
 <body>
-<div class="mainWrap">	<div class="indexWrap">	
-		<img src="img/arrow.png" class="flipButton"></img>
-		<div class="front active createF">
+<div class="mainWrap">
+	<div class="innerWrap">
+		<div class="indexWrap">	
 			
-			<div class="cardText">
-				<p>Front</p> 
+			<img src="img/edit.png" class="editor"></img>
+			<img src="img/arrow.png" class="flipButton"></img>
+			<div class="front active createF">
+				
+				<div class="cardText">
+					<p>Front</p> 
+				</div>
 			</div>
+			
+			<div class="back hidden createB">
+				<div class="cardText">
+					<p>Back</p> 
+				</div>	
+			</div>		
 		</div>
-		
-		<div class="back hidden createB">
-			<div class="cardText">
-				<p>Back</p> 
-			</div>	
-		</div>		
-	</div>
 	
-	<textarea id="frontText"></textarea>
-	<textarea id="backText"></textarea>
-	<br></br>
-	<button type="button" id="submit">Change Text</button>
-	<button type="button" id="save">Save</button>
-	
-	<div class="savedCards">
-		
+		<textarea id="frontText"></textarea>
+		<textarea id="backText"></textarea>
+		<br></br>
+		<div class="buttonWrap">
+			<button type="button" id="submit">Change Text</button>
+			<button type="button" id="save">Save New Card</button>
+		</div >
+		<div class="savedCards">
+			
+		</div>
 	</div>
-	<!--fudge--></div>
+</div>
 </body>

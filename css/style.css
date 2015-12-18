@@ -3,18 +3,32 @@
 	padding:0;
 }
 
-
+body{
+	Background-color: #b3e6ff
+}
 .indexWrap{
  	display:block; 
 	height:210px;
+	margin: 0 auto;
+	position:relative;
+	min-width:525px;
 	margin-bottom:10px;
 	overflow:hidden;
+	
 }
 .front, .back{
 	width:500px;
 	height:200px;
+	position:relative;
+	margin:0 auto;
 	border: 5px solid black;
 	margin-bottom:5px;
+}
+.front{
+	background-color: #b3e6ff
+}
+.back{
+	background-color: #66cdff;	
 }
 .cardText{
 	position: relative;
@@ -28,6 +42,12 @@
 textarea{
 	resize:none;
 	width:250px;
+	position:relative;
+	margin:0 auto;
+	
+}
+#frontText{
+	left:10px	
 }
 button{
 	display:block;
@@ -35,6 +55,14 @@ button{
 	width: 100px;
 	margin: 0 auto;
 	margin-bottom:10px;
+	
+	
+	
+}
+.buttonWrap{
+	position:relative;
+	
+	margin: 0 auto;
 }
 
 .active{
@@ -49,9 +77,19 @@ button{
 	margin:0;
 	padding:0;
 	position:absolute;
-	margin-left:470px;
-	margin-top:170px;
-	
+	top:175px;
+	left:475px;
+	z-index:2;
+}
+.editor{
+	height:20px;
+	width: 20px;	
+	margin:0;
+	padding:0;
+	position:absolute;
+	z-index:2;
+	left:450px;
+	top:175px;
 }
 
 .savedCards{
@@ -61,6 +99,20 @@ button{
 /*fudge*/
 .mainWrap{
 	margin: 0 auto;
+	left:0;
+	right:0;
 	width: 525px; 
+	background-color:#6699ff;
+	position:absolute;
+	padding-top:5px;
+	/* 
+	background-color: #ffffe5 */
+	/* padding:10px */
+}
+
+.innerWrap{
+	position:relative;
+	margin:0 auto;
+	display:block;
 	
 }
