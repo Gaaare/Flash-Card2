@@ -57,6 +57,7 @@ $(document).ready(function(){
 		//removes editing class
 		$(".editingFront").removeClass("editingFront");
 		$(".editingBack").removeClass("editingClass");
+		creatorMode();
 		
 	}
 	
@@ -75,7 +76,7 @@ $(document).ready(function(){
 	})
 	
 	$(document).on('click','.flipButton',function(){		
-	/* 	console.log("flip clicked"); */	
+	 	console.log("flip clicked"); 	
 		
 		var fcActive = $(this).siblings(".active");
 		var fcHidden = $(this).siblings(".hidden");
@@ -88,15 +89,33 @@ $(document).ready(function(){
 		$(".oldActive").removeClass("oldActive");
 		
 	})	
+	function editorMode(){
+		isEditing=true;
+		$("#save").html("Save Changes");
+		$(".mainWrap").css("background-color","#ffb84d");
+		$("#mode").text("Edit Mode")
+		
+	}
+	function creatorMode(){
+		isEditing=false;
+		//changes background color to indicate editing
+		$(".mainWrap").css("background-color","#8AB1D9");
+		//changes save button text to indicate editing
+		$("#save").html("Save New Card");
+		$("#mode").text("Creator Mode");
+	}
 	
 	$(document).on("click",".editor",function(){
-		
+		if(isEditing){			
+			creatorMode();
+		}else{
+			editorMode();		
+		}
+				
 		//saves this cards text
 		var frontText = $(this).siblings(".front").find("p").text();
-		var backText = $(this).siblings(".back").find("p").text();
-		
-		//removes current editing class if editing is already active;
-		
+		var backText = $(this).siblings(".back").find("p").text();		
+	
 		//adds the editing class
 		$(this).siblings(".front").addClass("editingFront");
 		$(this).siblings(".back").addClass("editingBack");
@@ -104,16 +123,6 @@ $(document).ready(function(){
 		//sets creator text as this cards text
 		$(".createF .cardText p").text(frontText);
 		$(".createB .cardText p").text(backText);	
-	
-		
-		isEditing=true;
-		
-		//changes background color to indicate editing
-		$(".mainWrap").css("background-color","#ffb84d");
-		//changes save button text to indicate editing
-		$("#save").html("Save Edit");
-/* 		console.log("front ="+frontText);
-		console.log("back = "+backText); */
 	})
 
 	//fudge

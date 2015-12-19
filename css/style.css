@@ -25,10 +25,10 @@ body{
 	margin-bottom:5px;
 }
 .front{
-	background-color: #b3e6ff
+	background-color:white;
 }
 .back{
-	background-color: #66cdff;	
+	background-color: white;	
 }
 .cardText{
 	position: relative;
@@ -37,6 +37,7 @@ body{
 	width: 400px;
 	text-align: center;
 	font-size:35px;
+	font-family:ms, sans-serif;
 	transform: translate(-50%, -50%);	
 }
 textarea{
@@ -96,12 +97,20 @@ button{
 	width:510px;
 	padding: 0;
 }
+
+#mode{
+	margin-top:25px;
+	text-align:center;	
+	font-size:40px;
+	font-family:ms, sans-serif;	
+	text-shadow: 1px 1px 5px rgba(255, 255, 255, 1);
+}
 /*fudge*/
 .mainWrap{
 	margin: 0 auto;
 	left:0;
 	right:0;
-	top:25px;
+	top:75px;
 	width: 525px; 
 	background-color:#8AB1D9;
 	position:absolute;
