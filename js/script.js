@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
 	var isEditing = false;
+	var clearTextArea = true;
+	var drawAllNum = 0;
 	
 	$("#submit").click(function(){		
 		//saves textArea text as variable
@@ -9,7 +11,20 @@ $(document).ready(function(){
 
 		//changes creator text to textArea texts
 		$(".createF .cardText p").text(frontText);
-		$(".createB .cardText p").text(backText)
+		$(".createB .cardText p").text(backText);
+	})
+	
+	$("#frontText").keyup(function(){
+		
+		var frontText = $("#frontText").val();
+		$(".creatF .cardText p").text(frontText);
+	})
+	
+	$(document).on("click",".delete",function(){
+		$(this).parent().remove();		
+		var test = $(this).closest(".indexWrap").attr("id");
+		savedCards.splice(test, 1);
+		console.log(test);
 	})
 	
 	//creates new index card
@@ -19,31 +34,47 @@ $(document).ready(function(){
 	}
 	savedCards = [];
 	
+	function drawAllCards(){
+		
+		$(".savedCards").empty();
+		for(i = 0; i < savedCards.length ; i++)
+		{
+			var card = savedCards[i];
+			
+		//creates new card html
+		$(".savedCards").append('</div><div class="indexWrap" id='+i+'>\
+			<img src="img/arrow.png" class="flipButton"></img>\
+			<img src="img/edit.png" class="editor"></img>\
+			<img src="img/trash.png" class="delete"></img>\
+			<div class="front active">\
+				<div class="cardText">\
+					<p>'+card.cFrontText+'</p>\
+				</div>\
+			</div>\
+			<div class="back hidden">\
+				<div class="cardText">\
+					<p>'+card.cBackText+'</p>\
+				</div>\
+			</div>');
+		}
+		console.log(savedCards);
+	}
+	$("#drawAll").click(function(){
+		drawAllCards();
+		drawAllNum = 0;
+		$("#drawNum").text(drawAllNum);
+	})
 	//creates a new card
 	function saveNew(){
 		//saves creator text 
 		var front = $(".createF .cardText p").text();
 		var back = $(".createB .cardText p").text();
 		var num = savedCards.length;
-		console.log(num);
+		drawAllNum += 1;
+		/* console.log(num); */
 		savedCards[num] = new IndexCard(front,back);
-		
-		//creates new card html
-		$(".savedCards").append('<div id='+num+'></div><div class="indexWrap">\
-			<img src="img/arrow.png" class="flipButton"></img>\
-			<img src="img/edit.png" class="editor"></img>\
-			<div class="front active">\
-				<div class="cardText">\
-					<p>'+front+'</p>\
-				</div>\
-			</div>\
-			<div class="back hidden">\
-				<div class="cardText">\
-					<p>'+back+'</p>\
-				</div>\
-			</div>\
-		</div>');
-		
+
+		$("#drawNum").text(drawAllNum);
 		//makes sure editing is false
 		isEditing=false;
 	}
